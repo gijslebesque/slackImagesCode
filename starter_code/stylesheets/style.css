@@ -1,0 +1,135 @@
+/*
+background-grey: #F4F3F4;
+button-purple: #192592
+main-titles dark-grey: #2C303F;
+paragraph grey: #5b5e6d;
+nav grey: #5b5e6d;
+*/
+
+.body {
+  margin: 20px;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+ul {
+  display: none;
+}
+
+nav img {
+  width: 150px;
+}
+
+.hamburger-menu {
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger-menu span {
+  width: 100%;
+  height: 4px;
+  background-color: #5b5e6d;
+}
+
+/* All the images should be 50% */
+.flex-container img {
+  width: 50%;
+}
+
+/* Except for The Los Angeles Time Logo */
+
+.flex-container .bigger-img {
+  width: 80%;
+}
+
+.flex-container {
+  background: #f4f3f4;
+  padding: 40px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Flex for alligning in center and height
+ so the distances between borders is the same everywhere
+	he box-sizing property allows us to include 
+	the padding and border in an element's total width and height 
+
+	width: 100%; + flex-wrap:wrap; gives column like structure
+*/
+
+.flex-container div {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgb(194, 194, 194);
+}
+
+/* Last div shouldn't have a border */
+.flex-container div:last-of-type {
+  border-bottom: none;
+}
+
+@media (min-width: 767px) and (max-width: 959px) {
+  /* width: 50%; + flex-wrap:wrap; gives column like structure and two columns per row */
+
+  .flex-container div {
+    width: 50%;
+  }
+  /* Odd elements should have border-right */
+  .flex-container div:nth-of-type(odd) {
+    border-right: 1px solid rgb(194, 194, 194);
+  }
+  /* Second last elemtn shouldn't have border */
+  .flex-container div:nth-last-child(2) {
+    border-bottom: none;
+  }
+}
+
+@media (min-width: 960px) {
+  /* Three columns per row */
+  .flex-container div {
+    width: 33%;
+  }
+  /* Removing border*/
+
+  .flex-container div:nth-last-child(3),
+  .flex-container div:nth-last-child(2) {
+    border-bottom: none;
+  }
+
+  /* Adding border */
+  .flex-container div:nth-of-type(2),
+  .flex-container div:nth-of-type(5) {
+    border-left: 1px solid rgb(194, 194, 194);
+    border-right: 1px solid rgb(194, 194, 194);
+  }
+}
+
+/* max width to the wrapper. */
+@media (min-width: 1200px) {
+  .max-wrapper {
+    max-width: 1200px;
+    display: block;
+    margin: 0 auto;
+  }
+}
